@@ -17,6 +17,29 @@
         android:rowCount="3"
         android:background="?attr/colorOnSurface">
         <ImageView
+            android:id="@+id/c00"
+            style="@style/TrisCell"
+            android:layout_marginEnd="@dimen/grid_size"
+            android:layout_marginBottom="@dimen/grid_size"/>
+
+        <ImageView
+            android:id="@+id/c01"
+            style="@style/TrisCell"
+            android:layout_marginEnd="@dimen/grid_size"
+            android:layout_marginBottom="@dimen/grid_size"/>
+
+        <ImageView
+            android:id="@+id/c02"
+            style="@style/TrisCell"
+            android:layout_marginBottom="@dimen/grid_size"/>
+
+        <ImageView
+            android:id="@+id/c10"
+            style="@style/TrisCell"
+            android:layout_marginEnd="@dimen/grid_size"
+            android:layout_marginBottom="@dimen/grid_size"/>
+
+        <ImageView
             android:id="@+id/c11"
             style="@style/TrisCell"
             android:layout_marginEnd="@dimen/grid_size"
@@ -25,43 +48,20 @@
         <ImageView
             android:id="@+id/c12"
             style="@style/TrisCell"
-            android:layout_marginEnd="@dimen/grid_size"
             android:layout_marginBottom="@dimen/grid_size"/>
 
         <ImageView
-            android:id="@+id/c13"
+            android:id="@+id/c20"
             style="@style/TrisCell"
-            android:layout_marginBottom="@dimen/grid_size"/>
+            android:layout_marginEnd="@dimen/grid_size"/>
 
         <ImageView
             android:id="@+id/c21"
             style="@style/TrisCell"
-            android:layout_marginEnd="@dimen/grid_size"
-            android:layout_marginBottom="@dimen/grid_size"/>
+            android:layout_marginEnd="@dimen/grid_size"/>
 
         <ImageView
             android:id="@+id/c22"
-            style="@style/TrisCell"
-            android:layout_marginEnd="@dimen/grid_size"
-            android:layout_marginBottom="@dimen/grid_size"/>
-
-        <ImageView
-            android:id="@+id/c23"
-            style="@style/TrisCell"
-            android:layout_marginBottom="@dimen/grid_size"/>
-
-        <ImageView
-            android:id="@+id/c31"
-            style="@style/TrisCell"
-            android:layout_marginEnd="@dimen/grid_size"/>
-
-        <ImageView
-            android:id="@+id/c32"
-            style="@style/TrisCell"
-            android:layout_marginEnd="@dimen/grid_size"/>
-
-        <ImageView
-            android:id="@+id/c33"
             style="@style/TrisCell"/>
 
     </GridLayout>

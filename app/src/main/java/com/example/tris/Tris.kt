@@ -18,6 +18,7 @@ class Tris {
     }
 
     var player = 1
+    var turn = 1
 
     fun play(row: Int, column: Int): Int {
         var result = 0
@@ -29,6 +30,10 @@ class Tris {
             result = 0
         }
         player = (player % 2) + 1
+        turn++
+        if(turn>9) {
+            result = 3
+        }
         return result
     }
 
