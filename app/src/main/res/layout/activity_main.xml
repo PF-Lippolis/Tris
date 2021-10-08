@@ -6,13 +6,77 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <GridLayout
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideEnd"
+        app:layout_constraintStart_toStartOf="@+id/guideStart"
+        android:columnCount="3"
+        android:rowCount="3"
+        android:background="?attr/colorOnSurface">
+        <ImageView
+            android:id="@+id/c11"
+            style="@style/TrisCell"
+            android:layout_marginEnd="@dimen/grid_size"
+            android:layout_marginBottom="@dimen/grid_size"/>
+
+        <ImageView
+            android:id="@+id/c12"
+            style="@style/TrisCell"
+            android:layout_marginEnd="@dimen/grid_size"
+            android:layout_marginBottom="@dimen/grid_size"/>
+
+        <ImageView
+            android:id="@+id/c13"
+            style="@style/TrisCell"
+            android:layout_marginBottom="@dimen/grid_size"/>
+
+        <ImageView
+            android:id="@+id/c21"
+            style="@style/TrisCell"
+            android:layout_marginEnd="@dimen/grid_size"
+            android:layout_marginBottom="@dimen/grid_size"/>
+
+        <ImageView
+            android:id="@+id/c22"
+            style="@style/TrisCell"
+            android:layout_marginEnd="@dimen/grid_size"
+            android:layout_marginBottom="@dimen/grid_size"/>
+
+        <ImageView
+            android:id="@+id/c23"
+            style="@style/TrisCell"
+            android:layout_marginBottom="@dimen/grid_size"/>
+
+        <ImageView
+            android:id="@+id/c31"
+            style="@style/TrisCell"
+            android:layout_marginEnd="@dimen/grid_size"/>
+
+        <ImageView
+            android:id="@+id/c32"
+            style="@style/TrisCell"
+            android:layout_marginEnd="@dimen/grid_size"/>
+
+        <ImageView
+            android:id="@+id/c33"
+            style="@style/TrisCell"/>
+
+    </GridLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1"/>
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
