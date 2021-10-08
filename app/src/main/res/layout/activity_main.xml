@@ -7,62 +7,64 @@
     tools:context=".MainActivity">
 
     <GridLayout
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideEnd"
-        app:layout_constraintStart_toStartOf="@+id/guideStart"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="?attr/colorOnSurface"
         android:columnCount="3"
         android:rowCount="3"
-        android:background="?attr/colorOnSurface">
+        app:layout_constraintBottom_toTopOf="@+id/guideBottom"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/guideEnd"
+        app:layout_constraintStart_toStartOf="@+id/guideStart"
+        app:layout_constraintTop_toTopOf="@+id/guideTop">
+
         <ImageView
             android:id="@+id/c00"
             style="@style/TrisCell"
             android:layout_marginEnd="@dimen/grid_size"
-            android:layout_marginBottom="@dimen/grid_size"/>
+            android:layout_marginBottom="@dimen/grid_size" />
 
         <ImageView
             android:id="@+id/c01"
             style="@style/TrisCell"
             android:layout_marginEnd="@dimen/grid_size"
-            android:layout_marginBottom="@dimen/grid_size"/>
+            android:layout_marginBottom="@dimen/grid_size" />
 
         <ImageView
             android:id="@+id/c02"
             style="@style/TrisCell"
-            android:layout_marginBottom="@dimen/grid_size"/>
+            android:layout_marginBottom="@dimen/grid_size" />
 
         <ImageView
             android:id="@+id/c10"
             style="@style/TrisCell"
             android:layout_marginEnd="@dimen/grid_size"
-            android:layout_marginBottom="@dimen/grid_size"/>
+            android:layout_marginBottom="@dimen/grid_size" />
 
         <ImageView
             android:id="@+id/c11"
             style="@style/TrisCell"
             android:layout_marginEnd="@dimen/grid_size"
-            android:layout_marginBottom="@dimen/grid_size"/>
+            android:layout_marginBottom="@dimen/grid_size" />
 
         <ImageView
             android:id="@+id/c12"
             style="@style/TrisCell"
-            android:layout_marginBottom="@dimen/grid_size"/>
+            android:layout_marginBottom="@dimen/grid_size" />
 
         <ImageView
             android:id="@+id/c20"
             style="@style/TrisCell"
-            android:layout_marginEnd="@dimen/grid_size"/>
+            android:layout_marginEnd="@dimen/grid_size" />
 
         <ImageView
             android:id="@+id/c21"
             style="@style/TrisCell"
-            android:layout_marginEnd="@dimen/grid_size"/>
+            android:layout_marginEnd="@dimen/grid_size" />
 
         <ImageView
             android:id="@+id/c22"
-            style="@style/TrisCell"/>
+            style="@style/TrisCell" />
 
     </GridLayout>
 
@@ -71,12 +73,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.1"/>
+        app:layout_constraintGuide_percent="0.1" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideEnd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.9"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
