@@ -3,20 +3,33 @@ package com.example.tris
 import java.lang.IllegalStateException
 
 class Tris {
-    val grid = mutableListOf(
+    var grid = mutableListOf(
         mutableListOf(0,0,0),
         mutableListOf(0,0,0),
         mutableListOf(0,0,0)
     )
 
-    fun play(player: Int, row: Int, column: Int): Int {
+    fun resetGrid() {
+        grid = mutableListOf(
+            mutableListOf(0,0,0),
+            mutableListOf(0,0,0),
+            mutableListOf(0,0,0)
+        )
+    }
+
+    var player = 1
+
+    fun play(row: Int, column: Int): Int {
+        var result = 0
         if(grid[row][column] != 0) throw IllegalStateException()
         grid[row][column] = player
         if(checkWin(player, row, column)) {
-            return player
+            result = player
         } else {
-            return 0
+            result = 0
         }
+        player = (player % 2) + 1
+        return result
     }
 
     private fun checkWin(player: Int, row: Int, column: Int): Boolean {
