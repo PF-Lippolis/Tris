@@ -10,6 +10,7 @@ class Tris {
     )
 
     fun resetGrid() {
+        turn = 1
         grid = mutableListOf(
             mutableListOf(0,0,0),
             mutableListOf(0,0,0),
