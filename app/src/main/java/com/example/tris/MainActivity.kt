@@ -4,11 +4,17 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import androidx.lifecycle.lifecycleScope
 import com.example.tris.databinding.ActivityMainBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import java.util.concurrent.atomic.AtomicBoolean
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
+    var active = AtomicBoolean(true)
 
     val tris = Tris()
     lateinit var cells: List<List<ImageView>>
@@ -43,14 +49,20 @@ class MainActivity : AppCompatActivity() {
             for((j, c) in row.withIndex())
             c.apply {
                 setOnClickListener {
-                    if(tris.player == 1) {
-                        setImageResource(R.drawable.x_mark)
-                    } else {
-                        setImageResource(R.drawable.circle_mark)
+                    if(active.compareAndSet(true, false)) {
+                        lifecycleScope.launch(Dispatchers.Default) {
+                            delay(500L)
+                            active.set(true)
+                        }
+                        if(tris.player == 1) {
+                            setImageResource(R.drawable.x_mark)
+                        } else {
+                            setImageResource(R.drawable.circle_mark)
+                        }
+                        val result = tris.play(i, j)
+                        setOnClickListener(null)
+                        if(result != 0) showResult(result)
                     }
-                    val result = tris.play(i, j)
-                    setOnClickListener(null)
-                    if(result != 0) showResult(result)
                 }
             }
         }

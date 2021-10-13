@@ -22,7 +22,7 @@ class Tris {
     var turn = 1
 
     fun play(row: Int, column: Int): Int {
-        var result = 0
+        var result: Int
         if(grid[row][column] != 0) throw IllegalStateException()
         grid[row][column] = player
         if(checkWin(player, row, column)) {
